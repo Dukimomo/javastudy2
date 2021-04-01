@@ -28,34 +28,46 @@ public class Passenger {
 	public String getSeat() {
 		return seat;
 	}
-	
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-		return super.clone();
-	}
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
-	}
-	@Override
-	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
-		super.finalize();
-	}
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		// String 클래스에 구현되어있는 HashCode를 적극적으로 활용하면
+		// 쉽고 간편하게 우리에게 필요한 해시 함수를 만들 수 있다.
+		
+		// String 클래스의 hashCode 메서드
+		// 문자열을 해시화함
+		int hashCode = name.hashCode() + tel.hashCode() + seat.hashCode();
+		
+//		if(name.equals("홍길동")) {
+//			hashCode += 1;
+//		}
+//		if(tel.equals("010-7591-8524")) {
+//			hashCode += 2;
+//		}
+//		if(seat.equals("이코노미")) {
+//			hashCode += 3;
+//		}
+		return hashCode;
 	}
+		
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString();
+		return "이름="+name+",연락처="+tel+",좌석="+seat;
 	}
-	public void setSeat(String seat) {
-		this.seat = seat;
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Passenger) {
+			// 매개변수로 전달받은 객체를 Passenger 클래스 타입으로 변환할 수 있다면
+			Passenger target = (Passenger) obj;
+			
+			return this.hashCode() == obj.hashCode();
+		} else {
+			// 매개변수로 전달받은 객체를 Passenger 클래스 타입으로 변환할 수 없다면
+			// false
+			return false;
+		}
 	}
+	
 
 }

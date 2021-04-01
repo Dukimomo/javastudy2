@@ -1,6 +1,7 @@
 package Chapter4;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Ex2 {
@@ -18,7 +19,7 @@ public class Ex2 {
 		arrayList.add(1, "B");
 		System.out.println("인덱스 1 위치에 B 추가 : " + arrayList);
 		
-		arrayList.add(3, "D");
+		arrayList.add(3, "D"); 
 		System.out.println("인덱스 3 위치에 D 추가 : " + arrayList);
 //		arrayList = new LinkedList<>();
 //		
@@ -36,6 +37,7 @@ public class Ex2 {
 		allayList.add(9);
 		allayList.add(10);
 		
+		
 		Passenger passenger1 = new Passenger("홍길동", "010-1473-3698", "이코노미");
 		Passenger passenger2 = new Passenger("홍길딩", "010-1573-3698", "이코노미");
 		Passenger passenger3 = new Passenger("홍길등", "010-1673-3698", "이코노미");
@@ -44,6 +46,14 @@ public class Ex2 {
 		Passenger passengerX = new Passenger("메튜", "010-7591-1534", "이코노미");
 		
 		List<Passenger> passengerList = new ArrayList<>();
+		Iterator<Passenger> it = passengerList.iterator();
+		while(it.hasNext()) {
+			Passenger p1 = it.next();
+			System.out.println(p1.getName());
+			System.out.println(p1.getTel());
+			System.out.println(p1.getSeat());
+		}
+		
 		passengerList.add(passenger1);
 		passengerList.add(passenger2);
 		passengerList.add(passenger3);
@@ -84,7 +94,7 @@ public class Ex2 {
 		int[] arr = {1, 2, 3, 4, 5};
 		for(int i : arr) {
 			System.out.println(i);
-		}
+		} 
 		
 		arrayList.remove(2);
 		System.out.println("인덱스 2 위치의 값 삭제 : " + arrayList);
@@ -93,5 +103,7 @@ public class Ex2 {
 		
 		System.out.println("인덱스 2 위치의 값 반환 : " + arrayList.get(2));
 		System.out.println("인덱스 2 위치의 값 반환 : " + arrayList.get(3));
+	
+//		List<Passenger> passengerList = new ArrayList<>();
 	}
 }
