@@ -2,6 +2,7 @@ package Chapter4;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Ex12 {
 
@@ -25,6 +26,13 @@ public class Ex12 {
 		hashSwan.put("ȫ�浿", customer3);
 		hashSwan.put("ȫ�浿", customer4);
 		hashSwan.put("ȫ�浿", customer5);
+		
+		Set<String> keySet = hashSwan.keySet();
+		for (String key : keySet) {
+			Customer c = hashSwan.get(key);
+			System.out.println(c.getTel());
+			System.out.println(c.getPaymentMethod());
+		}
 	}
 
 }

@@ -23,13 +23,16 @@ public class Ex10 {
 		
 		// Iterator를 사용해서 모든 승객의 정보를 출력하세요.
 		
-		Iterator<Passenger> iterator = passengerList.iterator();
-		while(iterator.hasNext()) {
-			Passenger passenger = iterator.next();
-			
-			System.out.println("이름 : " + passenger.getName());
-			System.out.println("이름 : " + passenger.getTel());
-			System.out.println("이름 : " + passenger.getSeat()); 
+//		Iterator<Passenger> iterator = passengerList.iterator();
+//		while(iterator.hasNext()) {
+//			Passenger passenger = iterator.next();
+//			
+//			System.out.println("이름 : " + passenger.getName());
+//			System.out.println("이름 : " + passenger.getTel());
+//			System.out.println("이름 : " + passenger.getSeat()); 
+		
+		System.out.println(c.getTel());
+		System.out.println();
 		}
 	}
-}
+
