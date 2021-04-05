@@ -1,0 +1,48 @@
+1 : package chapter8;
+2 : 
+3 : import java.io.BufferedReader;
+4 : import java.io.BufferedWriter;
+5 : import java.io.FileNotFoundException;
+6 : import java.io.FileReader;
+7 : import java.io.FileWriter;
+8 : import java.io.IOException;
+9 : 
+10 : public class Ex11 {
+11 : 
+12 : 	public static void main(String[] args) {
+13 : 		FileReader fr = null;
+14 : 		BufferedReader br = null;
+15 : 		
+16 : 		FileWriter fw = null;
+17 : 		BufferedWriter bw = null;
+18 : 		
+19 : 		try {
+20 : 			fr = new FileReader("Ex11.java");
+21 : 			br = new BufferedReader(fr);
+22 : 			
+23 : 			fw = new FileWriter("Ex11.bak");
+24 : 			bw = new BufferedWriter(fw);
+25 : 			
+26 : 			String line = "";
+27 : 			for(int i=1; line != null ; i++) {
+28 : 				line = br.readLine();
+29 : 				
+30 : 				bw.write(i + " : " + line + "\n");
+31 : 			}
+32 : 			
+33 : 		} catch (FileNotFoundException e) {
+34 : 			// TODO Auto-generated catch block
+35 : 			e.printStackTrace();
+36 : 		} catch (IOException e) {
+37 : 			e.printStackTrace();
+38 : 		} finally {
+39 : 			try {
+40 : 				br.close();
+41 : 			} catch (IOException e) {
+42 : 				e.printStackTrace();
+43 : 			}
+44 : 		}
+45 : 	}
+46 : 
+47 : }
+48 : null
