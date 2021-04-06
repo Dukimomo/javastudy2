@@ -13,7 +13,7 @@ public class Ex11 {
 		FileReader fr = null;
 		BufferedReader br = null;
 		
-		FileWriter fw = null;
+		FileWriter fw = null; 
 		BufferedWriter bw = null;
 		
 		try {
@@ -25,9 +25,18 @@ public class Ex11 {
 			
 			String line = "";
 			for(int i=1; line != null ; i++) {
+				// line -> 입력 스트림에서 읽어온 한 줄의 문자열이 있음
 				line = br.readLine();
 				
-				bw.write(i + " : " + line + "\n");
+				// line 변수 내 import 문자열이 포함되어있는지 체크
+				// indexOf 메서드 -> 매개변수로 전달한 문자열이 해당 객체 내 어느 위치에 존재하는지 알려주는 매서드
+				// 매개변수로 전달한 문자열이 존재한다 -> 0이상의 값을 반환 / 매개변수로 전달한 문자열의 인덱스 번호
+				// 매개변수로 전달한 문자열이 존재하지 않는다 -> -1을 반환
+				if(line != null && line.indexOf("import") != -1) {
+					bw.write(i + " : " + line);
+					bw.newLine();
+				}
+
 			}
 			
 		} catch (FileNotFoundException e) {
